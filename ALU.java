@@ -1,17 +1,17 @@
 /**
- * Ä£ÄâALU½øĞĞÕûÊıºÍ¸¡µãÊıµÄËÄÔòÔËËã
- * @author 151250134_ ÌïÔ­
+ * æ¨¡æ‹ŸALUè¿›è¡Œæ•´æ•°å’Œæµ®ç‚¹æ•°çš„å››åˆ™è¿ç®—
+ * @author 151250134_ ç”°åŸ
  *
  */
 
 public class ALU {
 
 	/**
-	 * Éú³ÉÊ®½øÖÆÕûÊıµÄ¶ş½øÖÆ²¹Âë±íÊ¾¡£<br/>
-	 * Àı£ºintegerRepresentation("9", 8)
-	 * @param number Ê®½øÖÆÕûÊı¡£ÈôÎª¸ºÊı£»ÔòµÚÒ»Î»Îª¡°-¡±£»ÈôÎªÕıÊı»ò 0£¬ÔòÎŞ·ûºÅÎ»
-	 * @param length ¶ş½øÖÆ²¹Âë±íÊ¾µÄ³¤¶È
-	 * @return numberµÄ¶ş½øÖÆ²¹Âë±íÊ¾£¬³¤¶ÈÎªlength
+	 * ç”Ÿæˆåè¿›åˆ¶æ•´æ•°çš„äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºã€‚<br/>
+	 * ä¾‹ï¼šintegerRepresentation("9", 8)
+	 * @param number åè¿›åˆ¶æ•´æ•°ã€‚è‹¥ä¸ºè´Ÿæ•°ï¼›åˆ™ç¬¬ä¸€ä½ä¸ºâ€œ-â€ï¼›è‹¥ä¸ºæ­£æ•°æˆ– 0ï¼Œåˆ™æ— ç¬¦å·ä½
+	 * @param length äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„é•¿åº¦
+	 * @return numberçš„äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºï¼Œé•¿åº¦ä¸ºlength
 	 */
 	public String integerRepresentation (String number, int length) {
 		int[] resultOfTemp = new int[length];
@@ -26,11 +26,11 @@ public class ALU {
 			}
 			pointer--;
 			resultOfTemp[pointer] = 1;
-			//È¡·´
+			//å–å
 			for(int i = 0; i < length; i++){
 				resultOfTemp[i] = 1 - resultOfTemp[i];
 			}
-			int c = 1;                              //È¡·´¼Ó1Ê±µÄ½øÎ»
+			int c = 1;                              //å–ååŠ 1æ—¶çš„è¿›ä½
 			int pointer2 = length - 1;
 			while((resultOfTemp[pointer2] + c) > 1){
 				resultOfTemp[pointer2] = 0;
@@ -57,37 +57,37 @@ public class ALU {
 	}
 	
 	/**
-	 * Éú³ÉÊ®½øÖÆ¸¡µãÊıµÄ¶ş½øÖÆ±íÊ¾¡£
-	 * ĞèÒª¿¼ÂÇ 0¡¢·´¹æ¸ñ»¯¡¢Õı¸ºÎŞÇî£¨¡°+Inf¡±ºÍ¡°-Inf¡±£©¡¢ NaNµÈÒòËØ£¬¾ßÌå½è¼ø IEEE 754¡£
-	 * ÉáÈë²ßÂÔÎªÏò0ÉáÈë¡£<br/>
-	 * Àı£ºfloatRepresentation("11.375", 8, 11)
-	 * @param number Ê®½øÖÆ¸¡µãÊı£¬°üº¬Ğ¡Êıµã¡£ÈôÎª¸ºÊı£»ÔòµÚÒ»Î»Îª¡°-¡±£»ÈôÎªÕıÊı»ò 0£¬ÔòÎŞ·ûºÅÎ»
-	 * @param eLength Ö¸ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @param sLength Î²ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @return numberµÄ¶ş½øÖÆ±íÊ¾£¬³¤¶ÈÎª 1+eLength+sLength¡£´Ó×óÏòÓÒ£¬ÒÀ´ÎÎª·ûºÅ¡¢Ö¸Êı£¨ÒÆÂë±íÊ¾£©¡¢Î²Êı£¨Ê×Î»Òş²Ø£©
+	 * ç”Ÿæˆåè¿›åˆ¶æµ®ç‚¹æ•°çš„äºŒè¿›åˆ¶è¡¨ç¤ºã€‚
+	 * éœ€è¦è€ƒè™‘ 0ã€åè§„æ ¼åŒ–ã€æ­£è´Ÿæ— ç©·ï¼ˆâ€œ+Infâ€å’Œâ€œ-Infâ€ï¼‰ã€ NaNç­‰å› ç´ ï¼Œå…·ä½“å€Ÿé‰´ IEEE 754ã€‚
+	 * èˆå…¥ç­–ç•¥ä¸ºå‘0èˆå…¥ã€‚<br/>
+	 * ä¾‹ï¼šfloatRepresentation("11.375", 8, 11)
+	 * @param number åè¿›åˆ¶æµ®ç‚¹æ•°ï¼ŒåŒ…å«å°æ•°ç‚¹ã€‚è‹¥ä¸ºè´Ÿæ•°ï¼›åˆ™ç¬¬ä¸€ä½ä¸ºâ€œ-â€ï¼›è‹¥ä¸ºæ­£æ•°æˆ– 0ï¼Œåˆ™æ— ç¬¦å·ä½
+	 * @param eLength æŒ‡æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @param sLength å°¾æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @return numberçš„äºŒè¿›åˆ¶è¡¨ç¤ºï¼Œé•¿åº¦ä¸º 1+eLength+sLengthã€‚ä»å·¦å‘å³ï¼Œä¾æ¬¡ä¸ºç¬¦å·ã€æŒ‡æ•°ï¼ˆç§»ç è¡¨ç¤ºï¼‰ã€å°¾æ•°ï¼ˆé¦–ä½éšè—ï¼‰
 	 */
 	public String floatRepresentation (String number, int eLength, int sLength) {
 		int length = 1 + eLength + sLength;
-		int eMax = (int)Math.pow(2, eLength - 1) - 1;                   //¹æ¸ñ»¯×î´óÖ¸Êı
-		double max = (2 - Math.pow(2, -sLength)) * Math.pow(2, eMax);   //¹æ¸ñ»¯ÄÜ±íÊ¾µÄ×î´óµÄÊı
-		double min = Math.pow(2, -eMax + 1);                            //¹æ¸ñ»¯ÄÜ±íÊ¾µÄ×îĞ¡µÄÊı
+		int eMax = (int)Math.pow(2, eLength - 1) - 1;                   //è§„æ ¼åŒ–æœ€å¤§æŒ‡æ•°
+		double max = (2 - Math.pow(2, -sLength)) * Math.pow(2, eMax);   //è§„æ ¼åŒ–èƒ½è¡¨ç¤ºçš„æœ€å¤§çš„æ•°
+		double min = Math.pow(2, -eMax + 1);                            //è§„æ ¼åŒ–èƒ½è¡¨ç¤ºçš„æœ€å°çš„æ•°
 		
 		int[] resultOfTemp = new int[length];
 		if(number.startsWith("-")){
 			resultOfTemp[0] = 1;
 			number = number.substring(1);
 		}
-		//Õı¸ºÎŞÇî
+		//æ­£è´Ÿæ— ç©·
 		if(Double.parseDouble(number) > max){
 			for(int i = 1; i <= eLength + 1; i++){
 				resultOfTemp[i] = 1;
 			}
 		}
-		//¹æ¸ñ»¯Êı
+		//è§„æ ¼åŒ–æ•°
 		else if(Double.parseDouble(number) >= min){
 			int dot = number.indexOf(".");
-			double part1 = Double.parseDouble(number.substring(0, dot));    //ÕûÊı²¿·Ö
-			double part2 = Double.parseDouble(number) - part1;              //Ğ¡Êı²¿·Ö
+			double part1 = Double.parseDouble(number.substring(0, dot));    //æ•´æ•°éƒ¨åˆ†
+			double part2 = Double.parseDouble(number) - part1;              //å°æ•°éƒ¨åˆ†
 			int[] temp1 = new int[eMax - 1 + sLength];
 			int flag = 0;
 			while((part2 * 2) - 1 != -1 && flag <temp1.length){
@@ -108,8 +108,8 @@ public class ALU {
 			}
 			char[] c2 = s1.toCharArray();
 			int m = s1.indexOf("1");
-			int count = length1 - m - 1;                       //Ğ¡Êıµã×óÒÆµÄ´ÎÊı
-			int e = count + eMax;                              //Ö¸Êı²¿·ÖµÄ´óĞ¡
+			int count = length1 - m - 1;                       //å°æ•°ç‚¹å·¦ç§»çš„æ¬¡æ•°
+			int e = count + eMax;                              //æŒ‡æ•°éƒ¨åˆ†çš„å¤§å°
 			String s2 = this.integerRepresentation("" + e, eLength);
 			char[] c1 = s2.toCharArray();
 			for(int i = 1; i <= eLength; i++){
@@ -120,11 +120,11 @@ public class ALU {
 				m++;
 			}		
 		}
-		//·Ç¹æ¸ñ»¯Êı
+		//éè§„æ ¼åŒ–æ•°
 		else{
 			int dot = number.indexOf(".");
-			double part1 = Double.parseDouble(number.substring(0, dot));    //ÕûÊı²¿·Ö
-			double part2 = Double.parseDouble(number) - part1;              //Ğ¡Êı²¿·Ö
+			double part1 = Double.parseDouble(number.substring(0, dot));    //æ•´æ•°éƒ¨åˆ†
+			double part2 = Double.parseDouble(number) - part1;              //å°æ•°éƒ¨åˆ†
 			int[] temp1 = new int[eMax - 1 + sLength];
 			int flag = 0;
 			while((part2 * 2) - 1 != -1 && flag <temp1.length){
@@ -160,11 +160,11 @@ public class ALU {
 	}
 	
 	/**
-	 * Éú³ÉÊ®½øÖÆ¸¡µãÊıµÄIEEE 754±íÊ¾£¬ÒªÇóµ÷ÓÃ{@link #floatRepresentation(String, int, int) floatRepresentation}ÊµÏÖ¡£<br/>
-	 * Àı£ºieee754("11.375", 32)
-	 * @param number Ê®½øÖÆ¸¡µãÊı£¬°üº¬Ğ¡Êıµã¡£ÈôÎª¸ºÊı£»ÔòµÚÒ»Î»Îª¡°-¡±£»ÈôÎªÕıÊı»ò 0£¬ÔòÎŞ·ûºÅÎ»
-	 * @param length ¶ş½øÖÆ±íÊ¾µÄ³¤¶È£¬Îª32»ò64
-	 * @return numberµÄIEEE 754±íÊ¾£¬³¤¶ÈÎªlength¡£´Ó×óÏòÓÒ£¬ÒÀ´ÎÎª·ûºÅ¡¢Ö¸Êı£¨ÒÆÂë±íÊ¾£©¡¢Î²Êı£¨Ê×Î»Òş²Ø£©
+	 * ç”Ÿæˆåè¿›åˆ¶æµ®ç‚¹æ•°çš„IEEE 754è¡¨ç¤ºï¼Œè¦æ±‚è°ƒç”¨{@link #floatRepresentation(String, int, int) floatRepresentation}å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šieee754("11.375", 32)
+	 * @param number åè¿›åˆ¶æµ®ç‚¹æ•°ï¼ŒåŒ…å«å°æ•°ç‚¹ã€‚è‹¥ä¸ºè´Ÿæ•°ï¼›åˆ™ç¬¬ä¸€ä½ä¸ºâ€œ-â€ï¼›è‹¥ä¸ºæ­£æ•°æˆ– 0ï¼Œåˆ™æ— ç¬¦å·ä½
+	 * @param length äºŒè¿›åˆ¶è¡¨ç¤ºçš„é•¿åº¦ï¼Œä¸º32æˆ–64
+	 * @return numberçš„IEEE 754è¡¨ç¤ºï¼Œé•¿åº¦ä¸ºlengthã€‚ä»å·¦å‘å³ï¼Œä¾æ¬¡ä¸ºç¬¦å·ã€æŒ‡æ•°ï¼ˆç§»ç è¡¨ç¤ºï¼‰ã€å°¾æ•°ï¼ˆé¦–ä½éšè—ï¼‰
 	 */
 	public String ieee754 (String number, int length) {
 		if(length == 32){
@@ -176,10 +176,10 @@ public class ALU {
 	}
 	
 	/**
-	 * ¼ÆËã¶ş½øÖÆ²¹Âë±íÊ¾µÄÕûÊıµÄÕæÖµ¡£<br/>
-	 * Àı£ºintegerTrueValue("00001001")
-	 * @param operand ¶ş½øÖÆ²¹Âë±íÊ¾µÄ²Ù×÷Êı
-	 * @return operandµÄÕæÖµ¡£ÈôÎª¸ºÊı£»ÔòµÚÒ»Î»Îª¡°-¡±£»ÈôÎªÕıÊı»ò 0£¬ÔòÎŞ·ûºÅÎ»
+	 * è®¡ç®—äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„æ•´æ•°çš„çœŸå€¼ã€‚<br/>
+	 * ä¾‹ï¼šintegerTrueValue("00001001")
+	 * @param operand äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„æ“ä½œæ•°
+	 * @return operandçš„çœŸå€¼ã€‚è‹¥ä¸ºè´Ÿæ•°ï¼›åˆ™ç¬¬ä¸€ä½ä¸ºâ€œ-â€ï¼›è‹¥ä¸ºæ­£æ•°æˆ– 0ï¼Œåˆ™æ— ç¬¦å·ä½
 	 */
 	public String integerTrueValue (String operand) {
 		char[] resultOfTemp = operand.toCharArray();
@@ -192,12 +192,12 @@ public class ALU {
 	}
 	
 	/**
-	 * ¼ÆËã¶ş½øÖÆÔ­Âë±íÊ¾µÄ¸¡µãÊıµÄÕæÖµ¡£<br/>
-	 * Àı£ºfloatTrueValue("01000001001101100000", 8, 11)
-	 * @param operand ¶ş½øÖÆ±íÊ¾µÄ²Ù×÷Êı
-	 * @param eLength Ö¸ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @param sLength Î²ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @return operandµÄÕæÖµ¡£ÈôÎª¸ºÊı£»ÔòµÚÒ»Î»Îª¡°-¡±£»ÈôÎªÕıÊı»ò 0£¬ÔòÎŞ·ûºÅÎ»¡£Õı¸ºÎŞÇî·Ö±ğ±íÊ¾Îª¡°+Inf¡±ºÍ¡°-Inf¡±£¬ NaN±íÊ¾Îª¡°NaN¡±
+	 * è®¡ç®—äºŒè¿›åˆ¶åŸç è¡¨ç¤ºçš„æµ®ç‚¹æ•°çš„çœŸå€¼ã€‚<br/>
+	 * ä¾‹ï¼šfloatTrueValue("01000001001101100000", 8, 11)
+	 * @param operand äºŒè¿›åˆ¶è¡¨ç¤ºçš„æ“ä½œæ•°
+	 * @param eLength æŒ‡æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @param sLength å°¾æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @return operandçš„çœŸå€¼ã€‚è‹¥ä¸ºè´Ÿæ•°ï¼›åˆ™ç¬¬ä¸€ä½ä¸ºâ€œ-â€ï¼›è‹¥ä¸ºæ­£æ•°æˆ– 0ï¼Œåˆ™æ— ç¬¦å·ä½ã€‚æ­£è´Ÿæ— ç©·åˆ†åˆ«è¡¨ç¤ºä¸ºâ€œ+Infâ€å’Œâ€œ-Infâ€ï¼Œ NaNè¡¨ç¤ºä¸ºâ€œNaNâ€
 	 */
 	public String floatTrueValue (String operand, int eLength, int sLength) {
 		String realResult = "";
@@ -237,10 +237,10 @@ public class ALU {
 	}
 	
 	/**
-	 * °´Î»È¡·´²Ù×÷¡£<br/>
-	 * Àı£ºnegation("00001001")
-	 * @param operand ¶ş½øÖÆ±íÊ¾µÄ²Ù×÷Êı
-	 * @return operand°´Î»È¡·´µÄ½á¹û
+	 * æŒ‰ä½å–åæ“ä½œã€‚<br/>
+	 * ä¾‹ï¼šnegation("00001001")
+	 * @param operand äºŒè¿›åˆ¶è¡¨ç¤ºçš„æ“ä½œæ•°
+	 * @return operandæŒ‰ä½å–åçš„ç»“æœ
 	 */
 	public String negation (String operand) {
 		String result = "";
@@ -257,11 +257,11 @@ public class ALU {
 	}
 	
 	/**
-	 * ×óÒÆ²Ù×÷¡£<br/>
-	 * Àı£ºleftShift("00001001", 2)
-	 * @param operand ¶ş½øÖÆ±íÊ¾µÄ²Ù×÷Êı
-	 * @param n ×óÒÆµÄÎ»Êı
-	 * @return operand×óÒÆnÎ»µÄ½á¹û
+	 * å·¦ç§»æ“ä½œã€‚<br/>
+	 * ä¾‹ï¼šleftShift("00001001", 2)
+	 * @param operand äºŒè¿›åˆ¶è¡¨ç¤ºçš„æ“ä½œæ•°
+	 * @param n å·¦ç§»çš„ä½æ•°
+	 * @return operandå·¦ç§»nä½çš„ç»“æœ
 	 */
 	public String leftShift (String operand, int n) {
 		for(int i = 1; i <= n; i++){
@@ -271,11 +271,11 @@ public class ALU {
 	}
 	
 	/**
-	 * Âß¼­ÓÒÒÆ²Ù×÷¡£<br/>
-	 * Àı£ºlogRightShift("11110110", 2)
-	 * @param operand ¶ş½øÖÆ±íÊ¾µÄ²Ù×÷Êı
-	 * @param n ÓÒÒÆµÄÎ»Êı
-	 * @return operandÂß¼­ÓÒÒÆnÎ»µÄ½á¹û
+	 * é€»è¾‘å³ç§»æ“ä½œã€‚<br/>
+	 * ä¾‹ï¼šlogRightShift("11110110", 2)
+	 * @param operand äºŒè¿›åˆ¶è¡¨ç¤ºçš„æ“ä½œæ•°
+	 * @param n å³ç§»çš„ä½æ•°
+	 * @return operandé€»è¾‘å³ç§»nä½çš„ç»“æœ
 	 */
 	public String logRightShift (String operand, int n) {
 		for(int i = 1; i <= n; i++){
@@ -285,11 +285,11 @@ public class ALU {
 	}
 	
 	/**
-	 * ËãÊõÓÒÒÆ²Ù×÷¡£<br/>
-	 * Àı£ºlogRightShift("11110110", 2)
-	 * @param operand ¶ş½øÖÆ±íÊ¾µÄ²Ù×÷Êı
-	 * @param n ÓÒÒÆµÄÎ»Êı
-	 * @return operandËãÊõÓÒÒÆnÎ»µÄ½á¹û
+	 * ç®—æœ¯å³ç§»æ“ä½œã€‚<br/>
+	 * ä¾‹ï¼šlogRightShift("11110110", 2)
+	 * @param operand äºŒè¿›åˆ¶è¡¨ç¤ºçš„æ“ä½œæ•°
+	 * @param n å³ç§»çš„ä½æ•°
+	 * @return operandç®—æœ¯å³ç§»nä½çš„ç»“æœ
 	 */
 	public String ariRightShift (String operand, int n) {
 		for(int i = 1; i <= n; i++){
@@ -299,12 +299,12 @@ public class ALU {
 	}
 	
 	/**
-	 * È«¼ÓÆ÷£¬¶ÔÁ½Î»ÒÔ¼°½øÎ»½øĞĞ¼Ó·¨ÔËËã¡£<br/>
-	 * Àı£ºfullAdder('1', '1', '0')
-	 * @param x ±»¼ÓÊıµÄÄ³Ò»Î»£¬È¡0»ò1
-	 * @param y ¼ÓÊıµÄÄ³Ò»Î»£¬È¡0»ò1
-	 * @param c µÍÎ»¶Ôµ±Ç°Î»µÄ½øÎ»£¬È¡0»ò1
-	 * @return Ïà¼ÓµÄ½á¹û£¬ÓÃ³¤¶ÈÎª2µÄ×Ö·û´®±íÊ¾£¬µÚ1Î»±íÊ¾½øÎ»£¬µÚ2Î»±íÊ¾ºÍ
+	 * å…¨åŠ å™¨ï¼Œå¯¹ä¸¤ä½ä»¥åŠè¿›ä½è¿›è¡ŒåŠ æ³•è¿ç®—ã€‚<br/>
+	 * ä¾‹ï¼šfullAdder('1', '1', '0')
+	 * @param x è¢«åŠ æ•°çš„æŸä¸€ä½ï¼Œå–0æˆ–1
+	 * @param y åŠ æ•°çš„æŸä¸€ä½ï¼Œå–0æˆ–1
+	 * @param c ä½ä½å¯¹å½“å‰ä½çš„è¿›ä½ï¼Œå–0æˆ–1
+	 * @return ç›¸åŠ çš„ç»“æœï¼Œç”¨é•¿åº¦ä¸º2çš„å­—ç¬¦ä¸²è¡¨ç¤ºï¼Œç¬¬1ä½è¡¨ç¤ºè¿›ä½ï¼Œç¬¬2ä½è¡¨ç¤ºå’Œ
 	 */
 	public String fullAdder (char x, char y, char c) {
 		String result = String.valueOf(this.xOrGate(this.xOrGate(x, y), c));
@@ -340,12 +340,12 @@ public class ALU {
 	}
 	
 	/**
-	 * 4Î»ÏÈĞĞ½øÎ»¼Ó·¨Æ÷¡£ÒªÇó²ÉÓÃ{@link #fullAdder(char, char, char) fullAdder}À´ÊµÏÖ<br/>
-	 * Àı£ºclaAdder("1001", "0001", '1')
-	 * @param operand1 4Î»¶ş½øÖÆ±íÊ¾µÄ±»¼ÓÊı
-	 * @param operand2 4Î»¶ş½øÖÆ±íÊ¾µÄ¼ÓÊı
-	 * @param c µÍÎ»¶Ôµ±Ç°Î»µÄ½øÎ»£¬È¡0»ò1
-	 * @return ³¤¶ÈÎª5µÄ×Ö·û´®±íÊ¾µÄ¼ÆËã½á¹û£¬ÆäÖĞµÚ1Î»ÊÇ×î¸ßÎ»½øÎ»£¬ºó4Î»ÊÇÏà¼Ó½á¹û£¬ÆäÖĞ½øÎ»²»¿ÉÒÔÓÉÑ­»·»ñµÃ
+	 * 4ä½å…ˆè¡Œè¿›ä½åŠ æ³•å™¨ã€‚è¦æ±‚é‡‡ç”¨{@link #fullAdder(char, char, char) fullAdder}æ¥å®ç°<br/>
+	 * ä¾‹ï¼šclaAdder("1001", "0001", '1')
+	 * @param operand1 4ä½äºŒè¿›åˆ¶è¡¨ç¤ºçš„è¢«åŠ æ•°
+	 * @param operand2 4ä½äºŒè¿›åˆ¶è¡¨ç¤ºçš„åŠ æ•°
+	 * @param c ä½ä½å¯¹å½“å‰ä½çš„è¿›ä½ï¼Œå–0æˆ–1
+	 * @return é•¿åº¦ä¸º5çš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„è®¡ç®—ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æ˜¯æœ€é«˜ä½è¿›ä½ï¼Œå4ä½æ˜¯ç›¸åŠ ç»“æœï¼Œå…¶ä¸­è¿›ä½ä¸å¯ä»¥ç”±å¾ªç¯è·å¾—
 	 */
 	public String claAdder (String operand1, String operand2, char c) {
 		char[] P = new char[4];
@@ -375,15 +375,15 @@ public class ALU {
 	}
 	
 	/**
-	 * ¼ÓÒ»Æ÷£¬ÊµÏÖ²Ù×÷Êı¼Ó1µÄÔËËã¡£
-	 * ĞèÒª²ÉÓÃÓëÃÅ¡¢»òÃÅ¡¢Òì»òÃÅµÈÄ£Äâ£¬
-	 * ²»¿ÉÒÔÖ±½Óµ÷ÓÃ{@link #fullAdder(char, char, char) fullAdder}¡¢
-	 * {@link #claAdder(String, String, char) claAdder}¡¢
-	 * {@link #adder(String, String, char, int) adder}¡¢
-	 * {@link #integerAddition(String, String, int) integerAddition}·½·¨¡£<br/>
-	 * Àı£ºoneAdder("00001001")
-	 * @param operand ¶ş½øÖÆ²¹Âë±íÊ¾µÄ²Ù×÷Êı
-	 * @return operand¼Ó1µÄ½á¹û£¬³¤¶ÈÎªoperandµÄ³¤¶È¼Ó1£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÒç³ö£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ÆäÓàÎ»ÎªÏà¼Ó½á¹û
+	 * åŠ ä¸€å™¨ï¼Œå®ç°æ“ä½œæ•°åŠ 1çš„è¿ç®—ã€‚
+	 * éœ€è¦é‡‡ç”¨ä¸é—¨ã€æˆ–é—¨ã€å¼‚æˆ–é—¨ç­‰æ¨¡æ‹Ÿï¼Œ
+	 * ä¸å¯ä»¥ç›´æ¥è°ƒç”¨{@link #fullAdder(char, char, char) fullAdder}ã€
+	 * {@link #claAdder(String, String, char) claAdder}ã€
+	 * {@link #adder(String, String, char, int) adder}ã€
+	 * {@link #integerAddition(String, String, int) integerAddition}æ–¹æ³•ã€‚<br/>
+	 * ä¾‹ï¼šoneAdder("00001001")
+	 * @param operand äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„æ“ä½œæ•°
+	 * @return operandåŠ 1çš„ç»“æœï¼Œé•¿åº¦ä¸ºoperandçš„é•¿åº¦åŠ 1ï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æº¢å‡ºï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œå…¶ä½™ä½ä¸ºç›¸åŠ ç»“æœ
 	 */
 	public String oneAdder (String operand) {
 		String result = "";
@@ -397,13 +397,13 @@ public class ALU {
 	}
 	
 	/**
-	 * ¼Ó·¨Æ÷£¬ÒªÇóµ÷ÓÃ{@link #claAdder(String, String, char)}·½·¨ÊµÏÖ¡£<br/>
-	 * Àı£ºadder("0100", "0011", '0', 8)
-	 * @param operand1 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ±»¼ÓÊı
-	 * @param operand2 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ¼ÓÊı
-	 * @param c ×îµÍÎ»½øÎ»
-	 * @param length ´æ·Å²Ù×÷ÊıµÄ¼Ä´æÆ÷µÄ³¤¶È£¬Îª4µÄ±¶Êı¡£length²»Ğ¡ÓÚ²Ù×÷ÊıµÄ³¤¶È£¬µ±Ä³¸ö²Ù×÷ÊıµÄ³¤¶ÈĞ¡ÓÚlengthÊ±£¬ĞèÒªÔÚ¸ßÎ»²¹·ûºÅÎ»
-	 * @return ³¤¶ÈÎªlength+1µÄ×Ö·û´®±íÊ¾µÄ¼ÆËã½á¹û£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÒç³ö£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ºólengthÎ»ÊÇÏà¼Ó½á¹û
+	 * åŠ æ³•å™¨ï¼Œè¦æ±‚è°ƒç”¨{@link #claAdder(String, String, char)}æ–¹æ³•å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šadder("0100", "0011", '0', 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„è¢«åŠ æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„åŠ æ•°
+	 * @param c æœ€ä½ä½è¿›ä½
+	 * @param length å­˜æ”¾æ“ä½œæ•°çš„å¯„å­˜å™¨çš„é•¿åº¦ï¼Œä¸º4çš„å€æ•°ã€‚lengthä¸å°äºæ“ä½œæ•°çš„é•¿åº¦ï¼Œå½“æŸä¸ªæ“ä½œæ•°çš„é•¿åº¦å°äºlengthæ—¶ï¼Œéœ€è¦åœ¨é«˜ä½è¡¥ç¬¦å·ä½
+	 * @return é•¿åº¦ä¸ºlength+1çš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„è®¡ç®—ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æº¢å‡ºï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œålengthä½æ˜¯ç›¸åŠ ç»“æœ
 	 */
 	public String adder (String operand1, String operand2, char c, int length) {
 		String result = "";
@@ -434,24 +434,24 @@ public class ALU {
 	}
 	
 	/**
-	 * ÕûÊı¼Ó·¨£¬ÒªÇóµ÷ÓÃ{@link #adder(String, String, char, int) adder}·½·¨ÊµÏÖ¡£<br/>
-	 * Àı£ºintegerAddition("0100", "0011", 8)
-	 * @param operand1 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ±»¼ÓÊı
-	 * @param operand2 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ¼ÓÊı
-	 * @param length ´æ·Å²Ù×÷ÊıµÄ¼Ä´æÆ÷µÄ³¤¶È£¬Îª4µÄ±¶Êı¡£length²»Ğ¡ÓÚ²Ù×÷ÊıµÄ³¤¶È£¬µ±Ä³¸ö²Ù×÷ÊıµÄ³¤¶ÈĞ¡ÓÚlengthÊ±£¬ĞèÒªÔÚ¸ßÎ»²¹·ûºÅÎ»
-	 * @return ³¤¶ÈÎªlength+1µÄ×Ö·û´®±íÊ¾µÄ¼ÆËã½á¹û£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÒç³ö£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ºólengthÎ»ÊÇÏà¼Ó½á¹û
+	 * æ•´æ•°åŠ æ³•ï¼Œè¦æ±‚è°ƒç”¨{@link #adder(String, String, char, int) adder}æ–¹æ³•å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šintegerAddition("0100", "0011", 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„è¢«åŠ æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„åŠ æ•°
+	 * @param length å­˜æ”¾æ“ä½œæ•°çš„å¯„å­˜å™¨çš„é•¿åº¦ï¼Œä¸º4çš„å€æ•°ã€‚lengthä¸å°äºæ“ä½œæ•°çš„é•¿åº¦ï¼Œå½“æŸä¸ªæ“ä½œæ•°çš„é•¿åº¦å°äºlengthæ—¶ï¼Œéœ€è¦åœ¨é«˜ä½è¡¥ç¬¦å·ä½
+	 * @return é•¿åº¦ä¸ºlength+1çš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„è®¡ç®—ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æº¢å‡ºï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œålengthä½æ˜¯ç›¸åŠ ç»“æœ
 	 */
 	public String integerAddition (String operand1, String operand2, int length) {
 		return this.adder(operand1, operand2, '0', length);
 	}
 	
 	/**
-	 * ÕûÊı¼õ·¨£¬¿Éµ÷ÓÃ{@link #adder(String, String, char, int) adder}·½·¨ÊµÏÖ¡£<br/>
-	 * Àı£ºintegerSubtraction("0100", "0011", 8)
-	 * @param operand1 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ±»¼õÊı
-	 * @param operand2 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ¼õÊı
-	 * @param length ´æ·Å²Ù×÷ÊıµÄ¼Ä´æÆ÷µÄ³¤¶È£¬Îª4µÄ±¶Êı¡£length²»Ğ¡ÓÚ²Ù×÷ÊıµÄ³¤¶È£¬µ±Ä³¸ö²Ù×÷ÊıµÄ³¤¶ÈĞ¡ÓÚlengthÊ±£¬ĞèÒªÔÚ¸ßÎ»²¹·ûºÅÎ»
-	 * @return ³¤¶ÈÎªlength+1µÄ×Ö·û´®±íÊ¾µÄ¼ÆËã½á¹û£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÒç³ö£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ºólengthÎ»ÊÇÏà¼õ½á¹û
+	 * æ•´æ•°å‡æ³•ï¼Œå¯è°ƒç”¨{@link #adder(String, String, char, int) adder}æ–¹æ³•å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šintegerSubtraction("0100", "0011", 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„è¢«å‡æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„å‡æ•°
+	 * @param length å­˜æ”¾æ“ä½œæ•°çš„å¯„å­˜å™¨çš„é•¿åº¦ï¼Œä¸º4çš„å€æ•°ã€‚lengthä¸å°äºæ“ä½œæ•°çš„é•¿åº¦ï¼Œå½“æŸä¸ªæ“ä½œæ•°çš„é•¿åº¦å°äºlengthæ—¶ï¼Œéœ€è¦åœ¨é«˜ä½è¡¥ç¬¦å·ä½
+	 * @return é•¿åº¦ä¸ºlength+1çš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„è®¡ç®—ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æº¢å‡ºï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œålengthä½æ˜¯ç›¸å‡ç»“æœ
 	 */
 	public String integerSubtraction (String operand1, String operand2, int length) {
 		operand2 = this.negation(operand2);
@@ -459,12 +459,12 @@ public class ALU {
 	}
 	
 	/**
-	 * ÕûÊı³Ë·¨£¬Ê¹ÓÃBoothËã·¨ÊµÏÖ£¬¿Éµ÷ÓÃ{@link #adder(String, String, char, int) adder}µÈ·½·¨¡£<br/>
-	 * Àı£ºintegerMultiplication("0100", "0011", 8)
-	 * @param operand1 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ±»³ËÊı
-	 * @param operand2 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ³ËÊı
-	 * @param length ´æ·Å²Ù×÷ÊıµÄ¼Ä´æÆ÷µÄ³¤¶È£¬Îª4µÄ±¶Êı¡£length²»Ğ¡ÓÚ²Ù×÷ÊıµÄ³¤¶È£¬µ±Ä³¸ö²Ù×÷ÊıµÄ³¤¶ÈĞ¡ÓÚlengthÊ±£¬ĞèÒªÔÚ¸ßÎ»²¹·ûºÅÎ»
-	 * @return ³¤¶ÈÎªlength+1µÄ×Ö·û´®±íÊ¾µÄÏà³Ë½á¹û£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÒç³ö£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ºólengthÎ»ÊÇÏà³Ë½á¹û
+	 * æ•´æ•°ä¹˜æ³•ï¼Œä½¿ç”¨Boothç®—æ³•å®ç°ï¼Œå¯è°ƒç”¨{@link #adder(String, String, char, int) adder}ç­‰æ–¹æ³•ã€‚<br/>
+	 * ä¾‹ï¼šintegerMultiplication("0100", "0011", 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„è¢«ä¹˜æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„ä¹˜æ•°
+	 * @param length å­˜æ”¾æ“ä½œæ•°çš„å¯„å­˜å™¨çš„é•¿åº¦ï¼Œä¸º4çš„å€æ•°ã€‚lengthä¸å°äºæ“ä½œæ•°çš„é•¿åº¦ï¼Œå½“æŸä¸ªæ“ä½œæ•°çš„é•¿åº¦å°äºlengthæ—¶ï¼Œéœ€è¦åœ¨é«˜ä½è¡¥ç¬¦å·ä½
+	 * @return é•¿åº¦ä¸ºlength+1çš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„ç›¸ä¹˜ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æº¢å‡ºï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œålengthä½æ˜¯ç›¸ä¹˜ç»“æœ
 	 */
 	public String integerMultiplication (String operand1, String operand2, int length) {
 		int length1 = operand1.length();
@@ -536,12 +536,12 @@ public class ALU {
 	}
 	
 	/**
-	 * ÕûÊıµÄ²»»Ö¸´ÓàÊı³ı·¨£¬¿Éµ÷ÓÃ{@link #adder(String, String, char, int) adder}µÈ·½·¨ÊµÏÖ¡£<br/>
-	 * Àı£ºintegerDivision("0100", "0011", 8)
-	 * @param operand1 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ±»³ıÊı
-	 * @param operand2 ¶ş½øÖÆ²¹Âë±íÊ¾µÄ³ıÊı
-	 * @param length ´æ·Å²Ù×÷ÊıµÄ¼Ä´æÆ÷µÄ³¤¶È£¬Îª4µÄ±¶Êı¡£length²»Ğ¡ÓÚ²Ù×÷ÊıµÄ³¤¶È£¬µ±Ä³¸ö²Ù×÷ÊıµÄ³¤¶ÈĞ¡ÓÚlengthÊ±£¬ĞèÒªÔÚ¸ßÎ»²¹·ûºÅÎ»
-	 * @return ³¤¶ÈÎª2*length+1µÄ×Ö·û´®±íÊ¾µÄÏà³ı½á¹û£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÒç³ö£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ÆäºólengthÎ»ÎªÉÌ£¬×îºólengthÎ»ÎªÓàÊı
+	 * æ•´æ•°çš„ä¸æ¢å¤ä½™æ•°é™¤æ³•ï¼Œå¯è°ƒç”¨{@link #adder(String, String, char, int) adder}ç­‰æ–¹æ³•å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šintegerDivision("0100", "0011", 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„è¢«é™¤æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¥ç è¡¨ç¤ºçš„é™¤æ•°
+	 * @param length å­˜æ”¾æ“ä½œæ•°çš„å¯„å­˜å™¨çš„é•¿åº¦ï¼Œä¸º4çš„å€æ•°ã€‚lengthä¸å°äºæ“ä½œæ•°çš„é•¿åº¦ï¼Œå½“æŸä¸ªæ“ä½œæ•°çš„é•¿åº¦å°äºlengthæ—¶ï¼Œéœ€è¦åœ¨é«˜ä½è¡¥ç¬¦å·ä½
+	 * @return é•¿åº¦ä¸º2*length+1çš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„ç›¸é™¤ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æº¢å‡ºï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œå…¶ålengthä½ä¸ºå•†ï¼Œæœ€ålengthä½ä¸ºä½™æ•°
 	 */
 	public String integerDivision (String operand1, String operand2, int length) {
 		int length1 = operand1.length();
@@ -609,14 +609,14 @@ public class ALU {
 	}
 	
 	/**
-	 * ´ø·ûºÅÕûÊı¼Ó·¨£¬¿ÉÒÔµ÷ÓÃ{@link #adder(String, String, char, int) adder}µÈ·½·¨£¬
-	 * µ«²»ÄÜÖ±½Ó½«²Ù×÷Êı×ª»»Îª²¹ÂëºóÊ¹ÓÃ{@link #integerAddition(String, String, int) integerAddition}¡¢
-	 * {@link #integerSubtraction(String, String, int) integerSubtraction}À´ÊµÏÖ¡£<br/>
-	 * Àı£ºsignedAddition("1100", "1011", 8)
-	 * @param operand1 ¶ş½øÖÆÔ­Âë±íÊ¾µÄ±»¼ÓÊı£¬ÆäÖĞµÚ1Î»Îª·ûºÅÎ»
-	 * @param operand2 ¶ş½øÖÆÔ­Âë±íÊ¾µÄ¼ÓÊı£¬ÆäÖĞµÚ1Î»Îª·ûºÅÎ»
-	 * @param length ´æ·Å²Ù×÷ÊıµÄ¼Ä´æÆ÷µÄ³¤¶È£¬Îª4µÄ±¶Êı¡£length²»Ğ¡ÓÚ²Ù×÷ÊıµÄ³¤¶È£¨²»°üº¬·ûºÅ£©£¬µ±Ä³¸ö²Ù×÷ÊıµÄ³¤¶ÈĞ¡ÓÚlengthÊ±£¬ĞèÒª½«Æä³¤¶ÈÀ©Õ¹µ½length
-	 * @return ³¤¶ÈÎªlength+2µÄ×Ö·û´®±íÊ¾µÄ¼ÆËã½á¹û£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÒç³ö£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬µÚ2Î»Îª·ûºÅÎ»£¬ºólengthÎ»ÊÇÏà¼Ó½á¹û
+	 * å¸¦ç¬¦å·æ•´æ•°åŠ æ³•ï¼Œå¯ä»¥è°ƒç”¨{@link #adder(String, String, char, int) adder}ç­‰æ–¹æ³•ï¼Œ
+	 * ä½†ä¸èƒ½ç›´æ¥å°†æ“ä½œæ•°è½¬æ¢ä¸ºè¡¥ç åä½¿ç”¨{@link #integerAddition(String, String, int) integerAddition}ã€
+	 * {@link #integerSubtraction(String, String, int) integerSubtraction}æ¥å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šsignedAddition("1100", "1011", 8)
+	 * @param operand1 äºŒè¿›åˆ¶åŸç è¡¨ç¤ºçš„è¢«åŠ æ•°ï¼Œå…¶ä¸­ç¬¬1ä½ä¸ºç¬¦å·ä½
+	 * @param operand2 äºŒè¿›åˆ¶åŸç è¡¨ç¤ºçš„åŠ æ•°ï¼Œå…¶ä¸­ç¬¬1ä½ä¸ºç¬¦å·ä½
+	 * @param length å­˜æ”¾æ“ä½œæ•°çš„å¯„å­˜å™¨çš„é•¿åº¦ï¼Œä¸º4çš„å€æ•°ã€‚lengthä¸å°äºæ“ä½œæ•°çš„é•¿åº¦ï¼ˆä¸åŒ…å«ç¬¦å·ï¼‰ï¼Œå½“æŸä¸ªæ“ä½œæ•°çš„é•¿åº¦å°äºlengthæ—¶ï¼Œéœ€è¦å°†å…¶é•¿åº¦æ‰©å±•åˆ°length
+	 * @return é•¿åº¦ä¸ºlength+2çš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„è®¡ç®—ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æº¢å‡ºï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œç¬¬2ä½ä¸ºç¬¦å·ä½ï¼Œålengthä½æ˜¯ç›¸åŠ ç»“æœ
 	 */
 	public String signedAddition (String operand1, String operand2, int length) {
 		String result = "";
@@ -681,14 +681,14 @@ public class ALU {
 	}
 	
 	/**
-	 * ¸¡µãÊı¼Ó·¨£¬¿Éµ÷ÓÃ{@link #signedAddition(String, String, int) signedAddition}µÈ·½·¨ÊµÏÖ¡£<br/>
-	 * Àı£ºfloatAddition("00111111010100000", "00111111001000000", 8, 8, 8)
-	 * @param operand1 ¶ş½øÖÆ±íÊ¾µÄ±»¼ÓÊı
-	 * @param operand2 ¶ş½øÖÆ±íÊ¾µÄ¼ÓÊı
-	 * @param eLength Ö¸ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @param sLength Î²ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @param gLength ±£»¤Î»µÄ³¤¶È
-	 * @return ³¤¶ÈÎª2+eLength+sLengthµÄ×Ö·û´®±íÊ¾µÄÏà¼Ó½á¹û£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÖ¸ÊıÉÏÒç£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ÆäÓàÎ»´Ó×óµ½ÓÒÒÀ´ÎÎª·ûºÅ¡¢Ö¸Êı£¨ÒÆÂë±íÊ¾£©¡¢Î²Êı£¨Ê×Î»Òş²Ø£©¡£ÉáÈë²ßÂÔÎªÏò0ÉáÈë
+	 * æµ®ç‚¹æ•°åŠ æ³•ï¼Œå¯è°ƒç”¨{@link #signedAddition(String, String, int) signedAddition}ç­‰æ–¹æ³•å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šfloatAddition("00111111010100000", "00111111001000000", 8, 8, 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¨ç¤ºçš„è¢«åŠ æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¨ç¤ºçš„åŠ æ•°
+	 * @param eLength æŒ‡æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @param sLength å°¾æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @param gLength ä¿æŠ¤ä½çš„é•¿åº¦
+	 * @return é•¿åº¦ä¸º2+eLength+sLengthçš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„ç›¸åŠ ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æŒ‡æ•°ä¸Šæº¢ï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œå…¶ä½™ä½ä»å·¦åˆ°å³ä¾æ¬¡ä¸ºç¬¦å·ã€æŒ‡æ•°ï¼ˆç§»ç è¡¨ç¤ºï¼‰ã€å°¾æ•°ï¼ˆé¦–ä½éšè—ï¼‰ã€‚èˆå…¥ç­–ç•¥ä¸ºå‘0èˆå…¥
 	 */
 	public String floatAddition (String operand1, String operand2, int eLength, int sLength, int gLength) {
 		String result = "";
@@ -777,7 +777,7 @@ public class ALU {
 		result = "0" + result.substring(1, 2 + eLength) + temp3.substring(3, 3 + eLength);
 		return result;
 	}
-	//ÅĞ¶Ï²Ù×÷ÊıÊÇ·ñÎª0
+	//åˆ¤æ–­æ“ä½œæ•°æ˜¯å¦ä¸º0
 		private boolean isZero(String operand, int length){
 			boolean result = false;
 			String temp = "";
@@ -789,7 +789,7 @@ public class ALU {
 			}
 			return result;
 		}
-		//ÅĞ¶ÏÁ½¸öÒÆÂëÊıµÄ´óĞ¡,·µ»ØÖµÎª0Ê±±íÊ¾ÏàµÈ£¬·µ»Ø1Ê±±íÊ¾operand1ÉÔ´ó£¬·µ»Ø2Ê±±íÊ¾operand2ÉÔ´ó
+		//åˆ¤æ–­ä¸¤ä¸ªç§»ç æ•°çš„å¤§å°,è¿”å›å€¼ä¸º0æ—¶è¡¨ç¤ºç›¸ç­‰ï¼Œè¿”å›1æ—¶è¡¨ç¤ºoperand1ç¨å¤§ï¼Œè¿”å›2æ—¶è¡¨ç¤ºoperand2ç¨å¤§
 		private int largerOne(String operand1, String operand2){
 			if(operand1.equals(operand2)){
 				return 0;
@@ -807,7 +807,7 @@ public class ALU {
 				}
 			}
 		}
-		//¼õ1Æ÷
+		//å‡1å™¨
 		private String oneSub(String operand, int length){
 			char[] temp1 = operand.toCharArray();
 			char[] temp2 = new char[length];
@@ -821,14 +821,14 @@ public class ALU {
 		}
 	
 	/**
-	 * ¸¡µãÊı¼õ·¨£¬¿Éµ÷ÓÃ{@link #floatAddition(String, String, int, int, int) floatAddition}·½·¨ÊµÏÖ¡£<br/>
-	 * Àı£ºfloatSubtraction("00111111010100000", "00111111001000000", 8, 8, 8)
-	 * @param operand1 ¶ş½øÖÆ±íÊ¾µÄ±»¼õÊı
-	 * @param operand2 ¶ş½øÖÆ±íÊ¾µÄ¼õÊı
-	 * @param eLength Ö¸ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @param sLength Î²ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @param gLength ±£»¤Î»µÄ³¤¶È
-	 * @return ³¤¶ÈÎª2+eLength+sLengthµÄ×Ö·û´®±íÊ¾µÄÏà¼õ½á¹û£¬ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÖ¸ÊıÉÏÒç£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ÆäÓàÎ»´Ó×óµ½ÓÒÒÀ´ÎÎª·ûºÅ¡¢Ö¸Êı£¨ÒÆÂë±íÊ¾£©¡¢Î²Êı£¨Ê×Î»Òş²Ø£©¡£ÉáÈë²ßÂÔÎªÏò0ÉáÈë
+	 * æµ®ç‚¹æ•°å‡æ³•ï¼Œå¯è°ƒç”¨{@link #floatAddition(String, String, int, int, int) floatAddition}æ–¹æ³•å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šfloatSubtraction("00111111010100000", "00111111001000000", 8, 8, 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¨ç¤ºçš„è¢«å‡æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¨ç¤ºçš„å‡æ•°
+	 * @param eLength æŒ‡æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @param sLength å°¾æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @param gLength ä¿æŠ¤ä½çš„é•¿åº¦
+	 * @return é•¿åº¦ä¸º2+eLength+sLengthçš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„ç›¸å‡ç»“æœï¼Œå…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æŒ‡æ•°ä¸Šæº¢ï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œå…¶ä½™ä½ä»å·¦åˆ°å³ä¾æ¬¡ä¸ºç¬¦å·ã€æŒ‡æ•°ï¼ˆç§»ç è¡¨ç¤ºï¼‰ã€å°¾æ•°ï¼ˆé¦–ä½éšè—ï¼‰ã€‚èˆå…¥ç­–ç•¥ä¸ºå‘0èˆå…¥
 	 */
 	public String floatSubtraction (String operand1, String operand2, int eLength, int sLength, int gLength) {
 		if(operand2.startsWith("0")){
@@ -841,13 +841,13 @@ public class ALU {
 	}
 	
 	/**
-	 * ¸¡µãÊı³Ë·¨£¬¿Éµ÷ÓÃ{@link #integerMultiplication(String, String, int) integerMultiplication}µÈ·½·¨ÊµÏÖ¡£<br/>
-	 * Àı£ºfloatMultiplication("00111110111000000", "00111111000000000", 8, 8)
-	 * @param operand1 ¶ş½øÖÆ±íÊ¾µÄ±»³ËÊı
-	 * @param operand2 ¶ş½øÖÆ±íÊ¾µÄ³ËÊı
-	 * @param eLength Ö¸ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @param sLength Î²ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @return ³¤¶ÈÎª2+eLength+sLengthµÄ×Ö·û´®±íÊ¾µÄÏà³Ë½á¹û,ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÖ¸ÊıÉÏÒç£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ÆäÓàÎ»´Ó×óµ½ÓÒÒÀ´ÎÎª·ûºÅ¡¢Ö¸Êı£¨ÒÆÂë±íÊ¾£©¡¢Î²Êı£¨Ê×Î»Òş²Ø£©¡£ÉáÈë²ßÂÔÎªÏò0ÉáÈë
+	 * æµ®ç‚¹æ•°ä¹˜æ³•ï¼Œå¯è°ƒç”¨{@link #integerMultiplication(String, String, int) integerMultiplication}ç­‰æ–¹æ³•å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šfloatMultiplication("00111110111000000", "00111111000000000", 8, 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¨ç¤ºçš„è¢«ä¹˜æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¨ç¤ºçš„ä¹˜æ•°
+	 * @param eLength æŒ‡æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @param sLength å°¾æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @return é•¿åº¦ä¸º2+eLength+sLengthçš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„ç›¸ä¹˜ç»“æœ,å…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æŒ‡æ•°ä¸Šæº¢ï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œå…¶ä½™ä½ä»å·¦åˆ°å³ä¾æ¬¡ä¸ºç¬¦å·ã€æŒ‡æ•°ï¼ˆç§»ç è¡¨ç¤ºï¼‰ã€å°¾æ•°ï¼ˆé¦–ä½éšè—ï¼‰ã€‚èˆå…¥ç­–ç•¥ä¸ºå‘0èˆå…¥
 	 */
 	public String floatMultiplication (String operand1, String operand2, int eLength, int sLength) {
 		String test = "";
@@ -942,13 +942,13 @@ public class ALU {
 	}
 	
 	/**
-	 * ¸¡µãÊı³ı·¨£¬¿Éµ÷ÓÃ{@link #integerDivision(String, String, int) integerDivision}µÈ·½·¨ÊµÏÖ¡£<br/>
-	 * Àı£ºfloatDivision("00111110111000000", "00111111000000000", 8, 8)
-	 * @param operand1 ¶ş½øÖÆ±íÊ¾µÄ±»³ıÊı
-	 * @param operand2 ¶ş½øÖÆ±íÊ¾µÄ³ıÊı
-	 * @param eLength Ö¸ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @param sLength Î²ÊıµÄ³¤¶È£¬È¡Öµ´óÓÚµÈÓÚ 4
-	 * @return ³¤¶ÈÎª2+eLength+sLengthµÄ×Ö·û´®±íÊ¾µÄÏà³Ë½á¹û,ÆäÖĞµÚ1Î»Ö¸Ê¾ÊÇ·ñÖ¸ÊıÉÏÒç£¨Òç³öÎª1£¬·ñÔòÎª0£©£¬ÆäÓàÎ»´Ó×óµ½ÓÒÒÀ´ÎÎª·ûºÅ¡¢Ö¸Êı£¨ÒÆÂë±íÊ¾£©¡¢Î²Êı£¨Ê×Î»Òş²Ø£©¡£ÉáÈë²ßÂÔÎªÏò0ÉáÈë
+	 * æµ®ç‚¹æ•°é™¤æ³•ï¼Œå¯è°ƒç”¨{@link #integerDivision(String, String, int) integerDivision}ç­‰æ–¹æ³•å®ç°ã€‚<br/>
+	 * ä¾‹ï¼šfloatDivision("00111110111000000", "00111111000000000", 8, 8)
+	 * @param operand1 äºŒè¿›åˆ¶è¡¨ç¤ºçš„è¢«é™¤æ•°
+	 * @param operand2 äºŒè¿›åˆ¶è¡¨ç¤ºçš„é™¤æ•°
+	 * @param eLength æŒ‡æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @param sLength å°¾æ•°çš„é•¿åº¦ï¼Œå–å€¼å¤§äºç­‰äº 4
+	 * @return é•¿åº¦ä¸º2+eLength+sLengthçš„å­—ç¬¦ä¸²è¡¨ç¤ºçš„ç›¸ä¹˜ç»“æœ,å…¶ä¸­ç¬¬1ä½æŒ‡ç¤ºæ˜¯å¦æŒ‡æ•°ä¸Šæº¢ï¼ˆæº¢å‡ºä¸º1ï¼Œå¦åˆ™ä¸º0ï¼‰ï¼Œå…¶ä½™ä½ä»å·¦åˆ°å³ä¾æ¬¡ä¸ºç¬¦å·ã€æŒ‡æ•°ï¼ˆç§»ç è¡¨ç¤ºï¼‰ã€å°¾æ•°ï¼ˆé¦–ä½éšè—ï¼‰ã€‚èˆå…¥ç­–ç•¥ä¸ºå‘0èˆå…¥
 	 */
 	public String floatDivision (String operand1, String operand2, int eLength, int sLength) {
 		String test = "";
