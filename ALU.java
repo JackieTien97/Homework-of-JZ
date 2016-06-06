@@ -640,7 +640,7 @@ public class ALU {
 			if(length1 < length2){
 				max = length2;
 			}
-			if(result.charAt(length + 1 - max) == '1'){
+			if(result.charAt(length - max) == '1'){
 				if(max == length){
 					result = "1" + operand1.substring(0, 1) + "0" + result.substring(length + 2 - max);
 				}
@@ -658,7 +658,7 @@ public class ALU {
 			if(length1 < length2){
 				max = length2;
 			}
-			if(result.charAt(length + 1 - max) == '1'){
+			if(result.charAt(length - max) == '1'){
 				if(operand1.substring(0, 1).equals("0")){
 					result = "0" + "1" + this.oneAdder(this.negation(result.substring(1))).substring(1);
 				}
@@ -1058,7 +1058,7 @@ public class ALU {
 	
 	public static void main(String[] args) {
 		ALU alu = new ALU();
-		System.out.println(alu.floatMultiplication("00111110111000000000000000000000", "00111111000000000000000000000000", 8, 23));
+		System.out.println(alu.signedAddition("0100", "0100", 8));
 //		System.out.println(alu.ariRightShift("1011", 3));
 //		String s = "11.375";
 //		int m = s.indexOf(".");
