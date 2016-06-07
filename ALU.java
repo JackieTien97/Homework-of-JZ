@@ -640,12 +640,12 @@ public class ALU {
 			if(length1 < length2){
 				max = length2;
 			}
-			if(result.charAt(length - max) == '1'){
+			if(result.charAt(length - max + 1) == '1'){
 				if(max == length){
-					result = "1" + operand1.substring(0, 1) + "0" + result.substring(length + 2 - max);
+					result = "1" + operand1.substring(0, 1) + result.substring(1);
 				}
 				else{
-					result = "1" + operand1.substring(0, 1) + result.substring(1, length - max) + "0" + result.substring(length + 2 - max);
+					result = "1" + operand1.substring(0, 1) + result.substring(1);
 				}
 			}
 			else{
@@ -653,12 +653,12 @@ public class ALU {
 			}
 		}
 		else{
-			result = this.integerSubtraction(operand1temp, operand2temp, length);
+			result = this.integerSubtraction(operand1.substring(1), operand2.substring(1), length);
 			int max = length1;
 			if(length1 < length2){
 				max = length2;
 			}
-			if(result.charAt(length - max) == '1'){
+			if(result.charAt(length - max + 1) == '1'){
 				if(operand1.substring(0, 1).equals("0")){
 					result = "0" + "1" + this.oneAdder(this.negation(result.substring(1))).substring(1);
 				}
@@ -730,7 +730,7 @@ public class ALU {
 		}
 		String temp3 = this.signedAddition(operand1.substring(0, 1) + "1" + operand1.substring(eLength + 1), operand2.substring(0, 1) + "1" + operand2.substring(eLength + 1), sLength + gLength);
 		result = "0" + temp3.substring(1, 2) + operand1.substring(1, 1 + eLength) + temp3.substring(3, 3 + sLength);
-		if(this.isZero(result.substring(2 + eLength), sLength)){
+		if(this.isZero(temp3.substring(2, 2 + sLength), sLength)){
 			String temp1 = "";
 			for(int i = 1; i <= eLength; i++){
 				temp1 = temp1 + "0";
@@ -748,7 +748,7 @@ public class ALU {
 			String stemp = "";
 			for(int j = 1; j <= sLength; j++){
 				stemp = stemp + "0";
-			}
+			} 
 			if(temp4.equals(temp2.substring(1))){
 				result = "1" + result.substring(1, 2) + temp2.substring(1) + stemp;
 			}
@@ -1058,7 +1058,7 @@ public class ALU {
 	
 	public static void main(String[] args) {
 		ALU alu = new ALU();
-		System.out.println(alu.signedAddition("0100", "0100", 8));
+		System.out.println(alu.floatMultiplication("00111110111000000", "00111111000000000", 8, 8));
 //		System.out.println(alu.ariRightShift("1011", 3));
 //		String s = "11.375";
 //		int m = s.indexOf(".");
