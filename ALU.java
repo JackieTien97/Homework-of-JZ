@@ -728,9 +728,10 @@ public class ALU {
 				}
 			}
 		}
-		String temp3 = this.signedAddition(operand1.substring(0, 1) + "1" + operand1.substring(eLength + 1), operand2.substring(0, 1) + "1" + operand2.substring(eLength + 1), sLength + gLength);
-		result = "0" + temp3.substring(1, 2) + operand1.substring(1, 1 + eLength) + temp3.substring(3, 3 + sLength);
-		if(this.isZero(temp3.substring(2, 2 + sLength), sLength)){
+		String temp3 = this.signedAddition(operand1.substring(0, 1) + "1" + operand1.substring(eLength + 1), operand2.substring(0, 1) + "1" + operand2.substring(eLength + 1), (sLength + gLength)/4 * 4 + 4);
+		int gtemp = (sLength + gLength)/4 * 4 + 4 - (sLength + gLength);
+		result = "0" + temp3.substring(1, 2) + operand1.substring(1, 1 + eLength) + temp3.substring(3 + gtemp, 3 + gtemp + sLength);
+		if(this.isZero(temp3.substring(2 + gtemp, 2 + gtemp + sLength), sLength)){
 			String temp1 = "";
 			for(int i = 1; i <= eLength; i++){
 				temp1 = temp1 + "0";
@@ -739,7 +740,7 @@ public class ALU {
 			return result;
 		}
 		if(temp3.substring(0, 1).equals("1")){
-			result = result.substring(0, 2 + eLength) + temp3.substring(3, 3 + sLength);
+			result = result.substring(0, 2 + eLength) + temp3.substring(3 + gtemp, 3 + gtemp + sLength);
 			String temp2 = this.oneAdder(result.substring(2, eLength + 2));
 			String temp4 = "";
 			for(int i = 1; i <= eLength; i++){
@@ -758,7 +759,7 @@ public class ALU {
 			
 			return result;
 		}
-		if(temp3.substring(2, 3).equals("1")){
+		if(temp3.substring(2 + gtemp, 3 + gtemp).equals("1")){
 			return result;
 		}
 //		temp3 = temp3.substring(0, 2) + this.leftShift(temp3.substring(2), 1);
@@ -766,15 +767,15 @@ public class ALU {
 		for(int i = 1; i <= eLength; i++){
 			temp5 = temp5 + "0";
 		}
-		while(!temp3.substring(2, 3).equals("1")){
-			temp3 = temp3.substring(0, 2) + this.leftShift(temp3.substring(2), 1);
-			result = result.substring(0, 2) + this.oneSub(result.substring(2, 2 + eLength), eLength) + temp3.substring(3, 3 + eLength);
+		while(!temp3.substring(2 + gtemp, 3 + gtemp).equals("1")){
+			temp3 = temp3.substring(0, 2 + gtemp) + this.leftShift(temp3.substring(2 + gtemp), 1);
+			result = result.substring(0, 2) + this.oneSub(result.substring(2, 2 + eLength), eLength) + temp3.substring(3 + gtemp, 3 + gtemp + eLength);
 			if(result.substring(2, 2 + eLength).equals(temp5)){
-				result = "0" + result.substring(1, 2 + eLength) + temp3.substring(2, 2 + sLength);
+				result = "0" + result.substring(1, 2 + eLength) + temp3.substring(2 + gtemp, 2 + gtemp + sLength);
 				return result;
 			}
 		}
-		result = "0" + result.substring(1, 2 + eLength) + temp3.substring(3, 3 + eLength);
+		result = "0" + result.substring(1, 2 + eLength) + temp3.substring(3 + gtemp, 3 + gtemp + eLength);
 		return result;
 	}
 	//判断操作数是否为0
@@ -1058,7 +1059,7 @@ public class ALU {
 	
 	public static void main(String[] args) {
 		ALU alu = new ALU();
-		System.out.println(alu.floatMultiplication("00111110111000000", "00111111000000000", 8, 8));
+		System.out.println(alu.floatAddition("00111111000000000000000000000000", "00111111000000000000000000000000", 8, 23, 8));
 //		System.out.println(alu.ariRightShift("1011", 3));
 //		String s = "11.375";
 //		int m = s.indexOf(".");
